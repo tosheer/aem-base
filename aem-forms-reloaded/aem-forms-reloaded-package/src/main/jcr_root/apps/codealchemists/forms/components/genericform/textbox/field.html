@@ -1,0 +1,27 @@
+<sly data-sly-use.constraint="net.codealchemists.aem.forms.components.FieldConstraintUse"></sly>
+<sly data-sly-use.field="net.codealchemists.aem.forms.components.FormFieldUse">
+    <sly data-sly-test="${properties.isTextArea}">
+		<div class="base-forms-element textarea-wrapper ${field.name}">
+            <sly data-sly-include="label.html"></sly>
+            <textarea id="${field.name}" type="text" name="${field.name}"
+                placeholder="${field.placeholder @ i18n}"
+                class="base-forms-textarea ${constraint.constraintClasses}"
+                value="${field.parameterValue}"
+                data-sly-attribute="${constraint.dataMap}"></textarea>
+            <sly data-sly-include="servervalidationErrorMessage.html"></sly>
+            <sly data-sly-include="instructiontext.html"></sly>    
+        </div>
+    </sly>
+    <sly data-sly-test="${!properties.isTextArea}">
+        <div class="base-forms-element input-wrapper ${field.name}">
+            <sly data-sly-include="label.html"></sly>
+            <input id="${field.name}" type="text" name="${field.name}"
+                placeholder="${field.placeholder @ i18n}"
+                class="base-forms-input ${constraint.constraintClasses}"
+                value="${field.parameterValue}" 
+                data-sly-attribute="${constraint.dataMap}"/>
+            <sly data-sly-include="servervalidationErrorMessage.html"></sly>
+            <sly data-sly-include="instructiontext.html"></sly>    
+        </div>
+	</sly>
+</sly>

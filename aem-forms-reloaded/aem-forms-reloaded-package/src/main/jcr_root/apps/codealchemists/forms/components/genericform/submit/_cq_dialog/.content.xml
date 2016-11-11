@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Submit Button"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/foundation/container">
+        <layout
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/layouts/tabs"
+            type="nav"/>
+        <items jcr:primaryType="nt:unstructured">
+            <buttonTab
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Submit Button Details"
+                sling:resourceType="granite/ui/components/foundation/container">
+                <layout
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="granite/ui/components/foundation/layouts/fixedcolumns"/>
+                <items jcr:primaryType="nt:unstructured">
+                    <columns
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/foundation/container">
+                        <items jcr:primaryType="nt:unstructured">
+                            <submitDialog
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./submit"
+                                text="Show Submit Button"/>
+                            <submitdialog-delete
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./submit@Delete"
+                                value="{Boolean}true"/>
+                            <submitfieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Submit Button"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                title="Submit Button">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <name
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Submit Name"
+                                        name="./submitname"/>
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Submit Title"
+                                        name="./submittitle"/>
+                                </items>
+                            </submitfieldset>
+                            <resetDialog
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./reset"
+                                text="Show Reset Button"/>
+                            <resetdialog-delete
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./reset@Delete"
+                                value="{Boolean}true"/>
+                            <resetfieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Reset Button"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                title="Reset Button">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <name
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Submit Name"
+                                        name="./resetname"/>
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Submit Title"
+                                        name="./resettitle"/>
+                                </items>
+                            </resetfieldset>
+                            <backDialog
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                name="./hasBackButton"
+                                text="Show Back Button"/>
+                            <backdialog-delete
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/foundation/form/hidden"
+                                name="./hasBackButton@Delete"
+                                value="{Boolean}true"/>
+                            <backfieldset
+                                jcr:primaryType="nt:unstructured"
+                                jcr:title="Submit Button"
+                                sling:resourceType="granite/ui/components/foundation/form/fieldset"
+                                title="Submit Button">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <backLink
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/pathbrowser"
+                                        fieldLabel="Back Button Url"
+                                        name="./backLink"/>
+                                </items>
+                            </backfieldset>
+                        </items>
+                    </columns>
+                </items>
+            </buttonTab>
+        </items>
+    </content>
+</jcr:root>

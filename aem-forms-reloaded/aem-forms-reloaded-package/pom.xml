@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>aem-forms-reloaded</artifactId>
+        <groupId>net.codealchemists.aem.forms</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>aem-forms-reloaded-package</artifactId>
+
+    <packaging>content-package</packaging>
+    <name>AEM :: Forms :: Reloaded :: Package</name>
+
+    <build>
+        <sourceDirectory>src/main/jcr_root</sourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>com.day.jcr.vault</groupId>
+                <artifactId>content-package-maven-plugin</artifactId>
+				<executions>
+                    <execution>
+                        <id>default-package</id>
+                        <configuration>
+                            <filters combine.children="append">
+								<filter>
+									<root>/apps/foundation/components</root>
+                                </filter>
+                                <filter>
+                                    <root>/etc/codealchemists/forms-lab</root>
+                                </filter>
+                                <filter>
+                                    <root>/apps/codealchemists/forms</root>
+                                </filter>
+                            </filters>
+                            <!-- Please don't change this ACL Handling policy without fully understanding why this is done.
+                             it is done as we need to merge permission service users have on the jcr paths.
+
+                             Removing this will cause service users to not to have permission to the path they need read/write
+                             permission.
+
+                             Changing this to Override or other policy will cause issue.-->
+                            <properties>
+                                <acHandling>Merge</acHandling>
+                            </properties>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- checks all xml files (within view projects) for well-formedness -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xml-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+       
+        <!-- embed bundle within package -->
+        <dependency>
+            <artifactId>aem-forms-reloaded-bundle</artifactId>
+            <groupId>${project.groupId}</groupId>
+            <version>${project.version}</version>
+            <type>bundle</type>
+        </dependency>
+
+    </dependencies>
+</project>

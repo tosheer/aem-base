@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>aem-core</artifactId>
+   		<groupId>net.codealchemists.aem.core</groupId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>aem-core-bundle</artifactId>
+	<packaging>bundle</packaging>
+	<name> AEM :: Core ::  Bundle</name>
+
+	<build>
+		<plugins>
+			<!-- deploys bundles in Apache Felix -->
+			<plugin>
+				<groupId>org.apache.sling</groupId>
+				<artifactId>maven-sling-plugin</artifactId>
+			</plugin>
+			<!-- generates OSGi Service Runtime (SCR) configuration -->
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-scr-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<configuration>
+					<instructions>
+						<Embed-Transitive>true</Embed-Transitive>
+						<Import-Package>*;resolution:=optional</Import-Package>
+					</instructions>
+
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

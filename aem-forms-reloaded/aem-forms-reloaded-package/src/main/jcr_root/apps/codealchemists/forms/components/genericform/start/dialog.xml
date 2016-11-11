@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    height="{Long}575"
+    helpPath="en/cq/current/wcm/default_components.html#Form"
+    stateful="{Boolean}false"
+    xtype="dialog">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <tabs
+            jcr:primaryType="cq:TabPanel"
+            layoutOnTabChange="{Boolean}true">
+            <items jcr:primaryType="cq:WidgetCollection">
+                <first
+                    jcr:primaryType="nt:unstructured"
+                    title="Form"
+                    xtype="panel">
+                    <items jcr:primaryType="cq:WidgetCollection">
+                        <redirect
+                            jcr:primaryType="cq:Widget"
+                            componentId="redirectField"
+                            fieldDescription="Leave empty to redisplay the form after submission"
+                            fieldLabel="Thank You Page"
+                            name="./redirect"
+                            xtype="pathfield"/>
+                        <actiontype
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Action Type"
+                                name="./actionType"
+                                xtype="formactionselection"/>
+                        <formid
+                                jcr:primaryType="cq:Widget"
+                                allowBlank="{Boolean}false"
+                                fieldDescription="A unique identifier for the form on the page"
+                                fieldLabel="Form Identifier"
+                                name="./formid"
+                                regex="/^[a-zA-Z0-9_-]+$/"
+                                regexText="This field should only contain numbers, letters, dashes and underscores"
+                                xtype="textfield">
+                            <listeners
+                                    jcr:primaryType="nt:unstructured"
+                                    loadcontent="function() { var f = this.findParentByType(&quot;form&quot;); if(f &amp;&amp; (typeof(this.value) == &quot;undefined&quot; || this.value.length() == 0)) { this.setValue(f.form.url.replace(/[/:.]/g,&quot;_&quot;))}}"/>
+                        </formid>
+                        <clientVal
+                                jcr:primaryType="cq:Widget"
+                                fieldDescription="If this is enabled java-script client code for validation will be generated"
+                                fieldLabel="Client Validation"
+                                name="./clientValidation"
+                                type="checkbox"
+                                xtype="selection">
+                            <listeners
+                                    jcr:primaryType="nt:unstructured"
+                                    selectionchanged="function() { CQ.WCM.getSidekick().previewReload = true; }"/>
+                        </clientVal>
+                        <loadactionname
+                                jcr:primaryType="cq:Widget"
+                                fieldDescription="Optional resource type which is used to load the form. "
+                                fieldLabel="Load Service Key"
+                                name="./loadActionName"
+                                xtype="textfield"/>
+                        <submitActionName
+                                jcr:primaryType="cq:Widget"
+                                fieldDescription="Submit action Handler name. "
+                                fieldLabel="Submit Action Name"
+                                name="./submitActionName"
+                                xtype="textfield"/>
+                        <ajaxCall
+                                jcr:primaryType="cq:Widget"
+                                fieldDescription="If this is enabled than form would be submitted by using ajax call."
+                                fieldLabel="Ajax Call"
+                                name="./ajaxCall"
+                                type="checkbox"
+                                xtype="selection"/>
+                        <ajaxSuccessMessage
+                                jcr:primaryType="cq:Widget"
+                                fieldDescription="Message to be displayed for successful submission of ajax form submit."
+                                fieldLabel="Ajax Success Message"
+                                name="./ajaxSuccessMessage"
+                                xtype="textfield"/>
+                    </items>
+                </first>
+            </items>
+        </tabs>
+    </items>
+</jcr:root>

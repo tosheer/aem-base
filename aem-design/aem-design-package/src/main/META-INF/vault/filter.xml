@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/etc/designs/codealchemists">
+    	<exclude pattern="/etc/designs/codealchemists/clientlibs/author.prerequisite/styles/generated.*"/>
+        <exclude pattern="/etc/designs/codealchemists/clientlibs/edit.prerequisite/styles/generated.*"/>
+        <exclude pattern="/etc/designs/codealchemists/clientlibs/publish.prerequisite/styles/generated.*"/>
+    </filter>
+</workspaceFilter>

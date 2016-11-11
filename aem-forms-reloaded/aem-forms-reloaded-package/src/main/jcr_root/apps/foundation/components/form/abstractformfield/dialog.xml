@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Form Field Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <detailTab
+                jcr:primaryType="nt:unstructured"
+                title="Field Details"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <name
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Specify name of the field that is used at server side for processing on form submission."
+                        fieldLabel="Element Name"
+                        name="./name"
+                        regex="/^[a-zA-Z0-9_\\.\\/:\\-]+$/"
+                        regexText="Element name should only contain characters, numbers or _./:-"
+                        xtype="textfield"/>
+                    <label
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription=""
+                        fieldLabel="Field Label"
+                        fieldSubLabel=""
+                        name="./label"
+                        xtype="textfield"/>
+                    <instructionText
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription=""
+                        fieldLabel="Instruction Text"
+                        fieldSubLabel=""
+                        name="./instructionText"
+                        xtype="textfield"/>
+                    <value
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Default Value"
+                        name="./defaultValue"
+                        xtype="textfield"/>
+                    <class
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}true"
+                        fieldDescription="Class name that will be added on the field to apply specific design."
+                        fieldLabel="Class"
+                        fieldSubLabel="CSS Class Name"
+                        name="./class"
+                        xtype="textfield"/>
+                    <showHide
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show / Hide"
+                        name="./showHide"
+                        type="checkbox"
+                        xtype="showhide"/>
+                    <mandatory
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Selecting this would add Asterisk(*) on form fields and mandatory class on mark up."
+                        fieldLabel="Mandatory Field"
+                        name="./isMandatory"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <tooltip
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Selecting this would add tool tip on form fields."
+                        fieldLabel="Tool Tip"
+                        name="./toolTip"
+                        type="checkbox"
+                        xtype="selection">
+                        <listeners
+                            jcr:primaryType="nt:unstructured"
+                            loadcontent="function(box,value) &#xa;{if(box.getValue()==''){box.nextSibling().hide();box.nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().hide();}&#xa;if(box.getValue()=='article') {box.nextSibling().show();box.nextSibling().nextSibling().show();box.nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().hide();}&#xa;if (box.getValue()=='product'){box.nextSibling().hide();box.nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().show();box.nextSibling().nextSibling().nextSibling().nextSibling().show();box.nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().hide();}&#xa;if(box.getValue()=='news'){box.nextSibling().hide();box.nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().show();}&#xa;if(box.getValue()=='freecontent') {box.nextSibling().hide();box.nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().hide();box.nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().nextSibling().show();}}&#xa;"
+                            selectionchanged="function(box,value) {if(box.getValue()=='true') {box.nextSibling().show();box.nextSibling().nextSibling().show();&#xa;} else {box.nextSibling().hide();box.nextSibling().nextSibling().hide();}}"/>
+                    </tooltip>
+                    <toolTipImage
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Image icon to be shown on tool tip."
+                        fieldLabel="Tool tip image url"
+                        name="./toolTipImage"
+                        rootPath="/content/dam"
+                        xtype="pathfield"/>
+                    <toolTipText
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Text to be shown on tool tip.Use Source Edit or Shift + Enter for line break."
+                        fieldLabel="Tool Tip Text"
+                        name="./toolTipText"
+                        xtype="richtext">
+                        <rtePlugins jcr:primaryType="nt:unstructured">
+                            <edit
+                                jcr:primaryType="nt:unstructured"
+                                defaultPasteMode="plaintext"
+                                features="*"/>
+                            <format
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <links
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <justify
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <lists
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                            <styles
+                                jcr:primaryType="nt:unstructured"
+                                enableStyle="{Boolean}true"
+                                features="*">
+                                <styles jcr:primaryType="cq:WidgetCollection">
+                                    <title
+                                        jcr:primaryType="nt:unstructured"
+                                        cssName="editorial-title"
+                                        text="Editorial Title"/>
+                                </styles>
+                            </styles>
+                            <misctools
+                                jcr:primaryType="nt:unstructured"
+                                features="*"/>
+                        </rtePlugins>
+                    </toolTipText>
+                </items>
+            </detailTab>
+            <constraintTab
+                jcr:primaryType="nt:unstructured"
+                title="Constraints"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <required
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Required"
+                        hidden="true"
+                        inputValue="true"
+                        name="./required"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <requiredMessage
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Required Message"
+                        hidden="true"
+                        name="./requiredMessage"
+                        xtype="textarea"/>
+                    <typeconfigs
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Add Constraints"
+                        name="./typeconfigs"
+                        xtype="customconfigmultifield">
+                        <fieldConfigs jcr:primaryType="cq:WidgetCollection">
+                            <constraintType
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Constraint"
+                                name="constraintType"
+                                options="/bin/wcm/foundation/forms/constraints.json"
+                                type="select"
+                                xtype="selection">
+                                <listeners
+                                    jcr:primaryType="nt:unstructured"
+                                    afterrender="function(box){if(this.getValue()!==undefined){if(this.getValue().indexOf('date')!=-1) {box.nextSibling().show();}  else {box.nextSibling().hide(); } }else{box.nextSibling().hide();}}"
+                                    selectionchanged="function(box,value){if(value!==undefined){if(value.indexOf('date')!=-1)   {box.nextSibling().show();   }  else   {box.nextSibling().hide();   } } else{box.nextSibling().hide()}}"/>
+                            </constraintType>
+                            <dateformatselector
+                                jcr:primaryType="cq:Widget"
+                                defaultValue="dd/MM/yyyy"
+                                fieldDescription="Select the Date format as required."
+                                fieldLabel="Select Date format"
+                                name="dateformat"
+                                type="select"
+                                value="dd/MM/yyyy"
+                                xtype="selection">
+                                <options jcr:primaryType="cq:WidgetCollection">
+                                    <full
+                                        jcr:primaryType="nt:unstructured"
+                                        text="DD/MM/YYYY"
+                                        value="dd/MM/yyyy"/>
+                                    <short
+                                        jcr:primaryType="nt:unstructured"
+                                        text="MM/YYYY"
+                                        value="MM/yyyy"/>
+                                    <yearonly
+                                        jcr:primaryType="nt:unstructured"
+                                        text="YYYY"
+                                        value="yyyy"/>
+                                    <dayonly
+                                        jcr:primaryType="nt:unstructured"
+                                        text="DD"
+                                        value="dd"/>
+                                </options>
+                            </dateformatselector>
+                            <constraintMessage
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Constraint Message"
+                                name="constraintMessage"
+                                xtype="textarea"/>
+                            <parameters
+                                jcr:primaryType="cq:Widget"
+                                fieldDescription="This field can be used to provide parameters to the validation. The value entered in this field needs to be purely managed and interpreted by the validation constraint. "
+                                fieldLabel="Parameters"
+                                name="parametersList"
+                                xtype="textfield"/>
+                        </fieldConfigs>
+                    </typeconfigs>
+                </items>
+            </constraintTab>
+        </items>
+    </items>
+</jcr:root>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Submit Button"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <buttonTab
+                jcr:primaryType="cq:Widget"
+                title="Submit Button Details"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <submitDialog
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show Submit Button"
+                        name="./submit"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <submitfieldset
+                        jcr:primaryType="cq:Widget"
+                        collapsed="false"
+                        collapsible="false"
+                        hidden="false"
+                        name="./submitfieldset"
+                        title="Submit Button"
+                        xtype="dialogfieldset">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <name
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Submit Name"
+                                name="./submitname"
+                                xtype="textfield"/>
+                            <title
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Submit Title"
+                                name="./submittitle"
+                                xtype="textfield"/>
+                        </items>
+                    </submitfieldset>
+                    <resetDialog
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show Reset Button"
+                        name="./reset"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <resetfieldset
+                        jcr:primaryType="cq:Widget"
+                        collapsed="false"
+                        collapsible="false"
+                        hidden="false"
+                        name="./resetfieldset"
+                        title="Reset Button"
+                        xtype="dialogfieldset">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <name
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Submit Name"
+                                name="./resetname"
+                                xtype="textfield"/>
+                            <title
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Submit Title"
+                                name="./resettitle"
+                                xtype="textfield"/>
+                        </items>
+                    </resetfieldset>
+                    <backDialog
+                        jcr:primaryType="cq:Widget"
+                        fieldLabel="Show Back Button"
+                        name="./hasBackButton"
+                        type="checkbox"
+                        xtype="selection"/>
+                    <backfieldset
+                        jcr:primaryType="cq:Widget"
+                        collapsed="false"
+                        collapsible="false"
+                        hidden="false"
+                        name="./submitfieldset"
+                        title="Submit Button"
+                        xtype="dialogfieldset">
+                        <items jcr:primaryType="cq:WidgetCollection">
+                            <backLink
+                                jcr:primaryType="cq:Widget"
+                                fieldLabel="Back Button Url"
+                                name="./backLink"
+                                xtype="pathfield"/>
+                        </items>
+                    </backfieldset>
+                </items>
+            </buttonTab>
+        </items>
+    </items>
+</jcr:root>

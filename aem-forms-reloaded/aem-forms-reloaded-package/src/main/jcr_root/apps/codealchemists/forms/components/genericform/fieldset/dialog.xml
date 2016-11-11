@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="Form Field Dialog"
+    xtype="dialog">
+    <items
+        jcr:primaryType="cq:Widget"
+        xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <basicTab
+                jcr:primaryType="nt:unstructured"
+                title="Basic Details"
+                xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <fieldsetLegend
+                        jcr:primaryType="cq:Widget"
+                        allowBlank="{Boolean}false"
+                        fieldDescription="Short description of this input group used for accessibility"
+                        fieldLabel="Fieldset Legend"
+                        fieldSubLabel=""
+                        name="./fieldsetLegend"
+                        xtype="textfield"/>
+                    <fieldsetHeader
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="Visible header for this input group"
+                        fieldLabel="Fieldset Header"
+                        fieldSubLabel=""
+                        name="./fieldsetHeader"
+                        xtype="textfield"/>
+                    <fieldsetClass
+                        jcr:primaryType="cq:Widget"
+                        fieldDescription="HTML class for this fieldset"
+                        fieldLabel="Fieldset class"
+                        fieldSubLabel=""
+                        name="./fieldsetClass"
+                        xtype="textfield"/>
+                </items>
+            </basicTab>
+        </items>
+    </items>
+</jcr:root>

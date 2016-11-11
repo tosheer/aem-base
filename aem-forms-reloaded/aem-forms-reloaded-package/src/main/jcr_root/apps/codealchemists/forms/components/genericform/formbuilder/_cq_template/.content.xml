@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured">
+    <start
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="codealchemists/forms/components/genericform/start"
+        actionType="codealchemists/forms/components/actions/baseFormSubmitAction"/>
+    <fieldset
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="codealchemists/forms/components/genericform/fieldset">
+        <fields
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys"/>
+    </fieldset>
+    <submit
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="codealchemists/forms/components/genericform/submit"
+        submit="true"/>
+    <end
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="codealchemists/forms/components/genericform/end"/>
+</jcr:root>

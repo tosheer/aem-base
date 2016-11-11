@@ -1,0 +1,9 @@
+<fieldset class='${properties.fieldsetClassAttr}'>
+    <sly data-sly-test="${properties.fieldsetlegend}">
+        <legend class="fieldsetLegend base-forms-legend">${properties.fieldsetlegend}</legend>
+    </sly>
+    <sly data-sly-test="${properties.fieldsetHeader @ i18n}">
+    	<p>${properties.fieldsetHeader @ i18n}</p>
+	</sly>
+    <div data-sly-resource="${'fields' @ resourceType='foundation/components/parsys'}" data-sly-unwrap="${ wcmmode.edit ? 'false' : 'true' }" ></div>
+</fieldset>

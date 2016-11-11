@@ -1,0 +1,8 @@
+<sly data-sly-use.constraint="net.codealchemists.aem.forms.components.FieldConstraintUse"></sly>
+<div class="base-forms-usshipping ${constraint.constraintClasses}"
+     data-sly-attribute="${constraint.dataMap}">
+    <sly data-sly-include="basecompositefield.jsp"></sly>
+</div>
+<sly data-sly-list.errorMessage="${constraint.errorMessages}">
+    <span class="base-forms-server-side-error">${errorMessage @ i18n}</span>
+</sly>

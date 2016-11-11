@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="cq:Dialog"
+          title="Text Box Dialog"
+          xtype="dialog">
+    <items
+            jcr:primaryType="cq:Widget"
+            xtype="tabpanel">
+        <items jcr:primaryType="cq:WidgetCollection">
+            <basicTab
+                    jcr:primaryType="nt:unstructured"
+                    title="Basic"
+                    xtype="panel">
+                <items jcr:primaryType="cq:WidgetCollection">
+                    <placeholder
+                            jcr:primaryType="cq:Widget"
+                            fieldDescription=""
+                            fieldLabel="Placeholder"
+                            fieldSubLabel=""
+                            name="./placeholder"
+                            xtype="textfield"/>
+                    <isTextArea
+                            jcr:primaryType="cq:Widget"
+                            fieldDescription=""
+                            fieldLabel="Text Area?"
+                            fieldtype="text"
+                            name="./isTextArea"
+                            type="checkbox"
+                            xtype="selection"/>
+                    <collapsed
+                            jcr:primaryType="cq:Widget"
+                            fieldLabel="Show Collaspsed?"
+                            name="./showCollapsed"
+                            type="checkbox"
+                            xtype="selection">
+                        <listeners
+                                jcr:primaryType="nt:unstructured"
+                                loadcontent="function(field,rec,path){var name = field.nextSibling().getName();if(name == './collapsedLabel'){if(field.getValue() == 'true'){field.nextSibling().show();}else{field.nextSibling().hide();}}}"
+                                selectionchanged="function(field,path){var name = field.nextSibling().getName();if(name == './collapsedLabel'){if(field.getValue() == 'true'){field.nextSibling().show();}else{field.nextSibling().hide();}}}"/>
+                    </collapsed>
+                    <collapsedLabel
+                            jcr:primaryType="cq:Widget"
+                            fieldDescription="Title shown when field is shown collapsed"
+                            fieldLabel="Label"
+                            fieldSubLabel=""
+                            name="./collapsedLabel"
+                            xtype="textfield"/>
+                    <autoComplete
+                            jcr:primaryType="cq:Widget"
+                            fieldDescription="Check this field to turn auto complete off"
+                            fieldLabel="Auto Complete"
+                            name="./autoComplete"
+                            type="checkbox"
+                            xtype="selection"/>
+                </items>
+            </basicTab>
+            <detailTabSuper
+                    jcr:primaryType="nt:unstructured"
+                    path="/apps/foundation/components/form/abstractformfield/dialog/items/items/detailTab.infinity.json"
+                    xtype="cqinclude"/>
+            <constraintTabSuper
+                    jcr:primaryType="nt:unstructured"
+                    path="/apps/foundation/components/form/abstractformfield/dialog/items/items/constraintTab.infinity.json"
+                    xtype="cqinclude"/>
+        </items>
+    </items>
+</jcr:root>

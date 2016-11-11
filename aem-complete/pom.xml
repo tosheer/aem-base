@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+    
+    <parent>
+        <artifactId>aem-base</artifactId>
+        <groupId>net.codealchemists.aem</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <groupId>com.codealchemists.aem.complete</groupId>
+	<artifactId>aem-complete</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>content-package</packaging>
+
+    <name>
+        AEM :: Complete :: Package
+	</name>
+
+    <properties>
+        <!-- this is an artificial package root, because this package only consists out of packages -->
+        <package.root>/apps/codealchemists/complete</package.root>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.day.jcr.vault</groupId>
+                <artifactId>content-package-maven-plugin</artifactId>
+                <configuration>
+                    <subPackages>
+                        <subPackage>
+                            <!-- include every package in dependencies -->
+                            <type>content-package</type>
+                            <filter>true</filter>
+                        </subPackage>
+                    </subPackages>
+                </configuration>
+            </plugin>
+
+            <!-- checks all xml files (within view projects) for well-formedness -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xml-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- list all the packages as dependencies here, which should be embedded in this package -->
+    <dependencies>
+
+        <dependency>
+            <artifactId>aem-config-package</artifactId>
+            <groupId>net.codealchemists.aem.config</groupId>
+            <version>${project.version}</version>
+            <type>content-package</type>
+        </dependency>
+        
+        <dependency>
+            <artifactId>aem-core-package</artifactId>
+            <groupId>net.codealchemists.aem.core</groupId>
+            <version>${project.version}</version>
+            <type>content-package</type>
+        </dependency>
+
+        <dependency>
+            <artifactId>aem-forms-reloaded-package</artifactId>
+            <groupId>net.codealchemists.aem.forms</groupId>
+            <version>${project.version}</version>
+            <type>content-package</type>
+        </dependency>
+
+        <dependency>
+            <artifactId>aem-design-package</artifactId>
+            <groupId>net.codealchemists.aem.design</groupId>
+            <version>${project.version}</version>
+            <type>content-package</type>
+        </dependency>
+
+        <dependency>
+            <artifactId>aem-ui-package</artifactId>
+            <groupId>net.codealchemists.aem.ui</groupId>
+            <version>${project.version}</version>
+            <type>content-package</type>
+        </dependency>
+
+    </dependencies>
+</project>

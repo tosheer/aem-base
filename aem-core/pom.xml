@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>net.codealchemists.aem</groupId>
+        <artifactId>aem-base</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>aem-core</artifactId>
+    <groupId>net.codealchemists.aem.core</groupId>
+    <packaging>pom</packaging>
+
+    <name>AEM :: Core</name>
+    <description>The Forms Framework reloaded.</description>
+
+    <properties>
+        <package.root>/apps/codealchemists/core</package.root>
+    </properties>
+
+    <modules>
+        <module>aem-core-bundle</module>
+        <module>aem-core-package</module>
+    </modules>
+</project>

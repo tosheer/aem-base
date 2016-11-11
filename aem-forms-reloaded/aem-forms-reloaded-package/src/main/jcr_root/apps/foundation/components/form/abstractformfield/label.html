@@ -1,0 +1,9 @@
+<sly data-sly-use.field="net.codealchemists.aem.forms.components.FormFieldUse"></sly>
+<sly data-sly-use.constraint="net.codealchemists.aem.forms.components.FieldConstraintUse"></sly>
+<sly data-sly-test="${field.label @ i18n}">
+    <label for="${field.name}" class="base-forms-label label_${field.name}">${field.label @ i18n}
+        <sly data-sly-test="${constraint.requiredLabel}">
+            <span class="base-forms-mandatory">${constraint.requiredLabel}</span>
+        </sly>
+    </label>
+</sly>

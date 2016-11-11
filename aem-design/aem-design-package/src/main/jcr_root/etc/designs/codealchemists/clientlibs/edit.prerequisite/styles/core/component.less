@@ -1,0 +1,37 @@
+/**
+* Generic edit mode styling for components
+*/
+
+.codealchemists-main .cq-placeholder,
+.codealchemists-main .new.section {
+    min-height: 50px;
+}
+
+// Component title / message
+.base-component-message {
+	background: #666;
+    color: #ccc;
+    font-size: 15px;
+    font-weight: bold;
+	padding: 8px;
+	width: 100%;
+}
+
+// Component title - alternate style with spacing
+.base-component-header {
+    .base-component-message();
+    margin-bottom: 10px;
+}
+
+// Header Component
+.base-component-fullwidth {
+    overflow: hidden;
+    .base-component {
+        max-width: 100%;
+        min-height: 100px;
+        position: relative;
+        right: 0;
+        top: 0;
+        width: 100%;
+    }
+}

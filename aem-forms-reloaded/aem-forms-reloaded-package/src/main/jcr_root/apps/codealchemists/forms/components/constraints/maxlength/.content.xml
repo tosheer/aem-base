@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+      jcr:primaryType="sling:Folder"
+      jcr:title="Max Length Validation"
+      sling:resourceType="foundation/components/form/constraint"
+      constraintMessage="forms.constraint.maxlength.default.message"
+      constraintName="cst-maxlength"
+      hint="Validates if the field has maximum length validation."/>

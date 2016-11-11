@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:description="Template to create dropdowns that may be used on different forms."
+    jcr:primaryType="cq:Template"
+    jcr:title="Reference Dropdowns"
+    allowedPaths="[/content(/.*)?,/etc/codealchemists/forms-lab(/.*)?]"
+    ranking="{Long}12">
+    <jcr:content
+        jcr:primaryType="cq:PageContent"
+        sling:resourceType="codealchemists/forms/pages/fragment/masterdatalist">
+        <config
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="codealchemists/forms/components/genericform/dropdown"
+            type="new">
+            <optionList jcr:primaryType="nt:unstructured">
+                <_x0031_
+                    jcr:primaryType="nt:unstructured"
+                    disabled="true"
+                    key="key"
+                    value="Value"/>
+            </optionList>
+        </config>
+    </jcr:content>
+</jcr:root>

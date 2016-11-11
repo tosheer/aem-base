@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:description="Abstract form field that provides framework for form field generation by including label and intruction text elements alongwith the client and sever validation structure. It also checks request / cookie for existence of field value that can be used to pre-populate the form fields."
+    jcr:primaryType="cq:Component"
+    jcr:title="Abstract Form Field"
+    sling:resourceSuperType="foundation/components/form/baseformfield"
+    componentGroup=".hidden"/>

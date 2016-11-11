@@ -1,0 +1,17 @@
+<!--/*
+  Forms Component
+*/-->
+<div class="base-forms-wrapper">
+	<div class="base-forms base-component" data-component-name="forms">
+		<div class="base-forms-generic">
+			<div data-sly-resource="${'start' @ resourceType='codealchemists/forms/components/genericform/start'}" data-sly-unwrap="${ wcmmode.edit ? 'false' : 'true' }" ></div>
+			<div data-sly-resource="${'fieldset' @ resourceType='codealchemists/forms/components/genericform/fieldset' }" data-sly-unwrap="${ wcmmode.edit ? 'false' : 'true' }"></div>
+			<div data-sly-resource="${'submit' @ resourceType='codealchemists/forms/components/genericform/submit'}"  data-sly-unwrap="${ wcmmode.edit ? 'false' : 'true' }" ></div>
+			<div data-sly-resource="${'formendpar' @ resourceType='foundation/components/parsys'}" data-sly-unwrap="${ wcmmode.edit ? 'false' : 'true' }"></div>
+			<div data-sly-resource="${'end' @ resourceType='codealchemists/forms/components/genericform/end'}" data-sly-unwrap="${ wcmmode.edit ? 'false' : 'true' }" ></div>
+			<div data-sly-resource="${'misc' @ resourceType='foundation/components/parsys'}" data-sly-unwrap="${ wcmmode.edit ? 'false' : 'true' }" ></div>
+			<div class="base-forms-server-side-error"></div>
+			<div class="base-forms-confirmation"></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Widget"
+    fieldDescription="Text to be shown on tool tip.Use Source Edit or Shift + Enter for line break."
+    fieldLabel="Tool Tip Text"
+    name="./toolTipText"
+    xtype="richtext">
+    <rtePlugins jcr:primaryType="nt:unstructured">
+        <edit
+            jcr:primaryType="nt:unstructured"
+            defaultPasteMode="plaintext"
+            features="*"/>
+        <format
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <links
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <justify
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <lists
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+        <styles
+            jcr:primaryType="nt:unstructured"
+            enableStyle="{Boolean}true"
+            features="*">
+            <styles jcr:primaryType="cq:WidgetCollection">
+                <title
+                    jcr:primaryType="nt:unstructured"
+                    cssName="editorial-title"
+                    text="Editorial Title"/>
+            </styles>
+        </styles>
+        <misctools
+            jcr:primaryType="nt:unstructured"
+            features="*"/>
+    </rtePlugins>
+</jcr:root>

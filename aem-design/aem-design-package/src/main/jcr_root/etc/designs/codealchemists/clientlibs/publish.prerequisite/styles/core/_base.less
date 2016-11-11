@@ -1,0 +1,168 @@
+// Base styles
+
+/*
+    Primary colors
+ */
+@base-primary: #fff;
+@base-secondary: #000;
+@base-grey-01: #999;
+@base-grey-02: #e0e0e0;
+@base-grey-03: #f1f1f1;
+@base-red: #f00;
+@base-active: #ddd;
+
+body {
+    font-family: Arial, Georgia, Serif;
+    margin: 0;
+    padding: 0;
+    background-color: @base-primary;
+    color: @base-secondary;
+    line-height: 1;
+    min-width: 320px; /* 1 */
+    width: 100%; /* 1 */
+
+    *,
+    *:focus {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        outline: 0;
+    }
+
+    &:after {
+        content: "narrow";
+        display: none;
+    }
+
+    sub {
+        vertical-align: sub;
+        font-size: smaller;
+    }
+
+    button[disabled]:hover {
+        cursor: no-drop;
+    }
+
+    a {
+        color: @base-secondary;
+        text-decoration: none;
+    }
+}
+
+[class^="base-icn"],
+[class*=" base-icn"] {
+    .base-icn-alt {
+        .visually-hidden();
+    }
+}
+
+// Mixins
+
+.visually-hidden() {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.reset-visually-hidden() {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    height: auto;
+    width: auto;
+    margin: 0;
+}
+
+.transition (@transition) {
+    -webkit-transition: @transition;
+    -moz-transition:    @transition;
+    -ms-transition:     @transition;
+    -o-transition:      @transition;
+    transition:         @transition;
+}
+
+.transition-property (...) {
+    @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+    -webkit-transition-property: @props;
+    -moz-transition-property:    @props;
+    -ms-transition-property:     @props;
+    -o-transition-property:      @props;
+    transition-property:         @props;
+}
+
+.transition-timing-function (@function) {
+    -webkit-transition-timing-function: @function;
+    -moz-transition-timing-function:    @function;
+    -ms-transition-timing-function:     @function;
+    -o-transition-timing-function:      @function;
+    transition-timing-function:         @function;
+}
+
+.transition-duration (@duration) {
+    -webkit-transition-duration: @duration;
+    -moz-transition-duration:    @duration;
+    -ms-transition-duration:     @duration;
+    -o-transition-duration:      @duration;
+    transition-duration:         @duration;
+}
+
+.transition-multiple-props(...) {//http://stackoverflow.com/a/10413399/1582783
+    @props: ~`"@{arguments}".replace(/[\[\]]/g, '')`;
+    -webkit-transition: @props;
+    -moz-transition: @props;
+    -o-transition: @props;
+    transition: @props;
+}
+
+.transform (@transform) {
+    -webkit-transform: @transform;
+    -moz-transform:    @transform;
+    -ms-transform:     @transform;
+    -o-transform:      @transform;
+    transform:         @transform;
+}
+
+.font-size(@sizeValue) {
+    @remValue: ((@sizeValue/100) * 62.5);
+    @pxValue: (@sizeValue * 10);
+    font-size: ~"@{pxValue}px";
+    font-size: ~"@{remValue}rem";
+}
+
+.font-size(@sizeValue, @lineHeight) {
+    .font-size(@sizeValue);
+    line-height: ( @lineHeight / @sizeValue );
+}
+
+// specifies relative line-height if font sizeValue is known
+.line-height(@sizeValue, @lineHeight) {
+    line-height: ( @lineHeight / @sizeValue );
+}
+
+.border-radius (@amount) {
+    -webkit-border-radius:  @amount;
+    -moz-border-radius:     @amount;
+    -o-border-radius:       @amount;
+    border-radius:          @amount;
+}
+
+
+//icons styles
+.base-icn-close {
+    background: rgb(0, 0, 0, 0) url("data:image/gif;base64,R0lGODlhFAAUAJEAAE1NTf///////wAAACH5BAEHAAIALAAAAAAUABQAAAIzBISpK+YMm5Enpodw1HlCfnkKOIqU1VXk55goVb2hi7Y0q95lfG70uurNaqLgTviyyUoFADs=") no-repeat scroll center center;
+    background-size: contain;
+}
+
+[class^="base-icn"],
+[class*=" base-icn"] {
+    .one-icn-alt {
+        .visually-hidden();
+    }
+}
+
+@zIndexOverlay: 11;
