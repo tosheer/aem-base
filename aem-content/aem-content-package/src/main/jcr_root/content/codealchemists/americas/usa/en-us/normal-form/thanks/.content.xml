@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-11-11T09:35:38.889Z"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/codealchemists/ui/templates/generic"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Thanks"
+        sling:resourceType="codealchemists/ui/pages/content/generic">
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <title
+                jcr:created="{Date}2016-11-11T09:35:14.214Z"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-11-11T09:35:38.887Z"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Thanks for form submit."
+                sling:resourceType="foundation/components/title"/>
+        </par>
+    </jcr:content>
+</jcr:root>

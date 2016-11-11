@@ -63,6 +63,7 @@
         <module>aem-design</module>
         <module>aem-complete</module>
         <module>aem-ui</module>
+        <module>aem-content</module>
     </modules>
     <dependencyManagement>
         <dependencies>

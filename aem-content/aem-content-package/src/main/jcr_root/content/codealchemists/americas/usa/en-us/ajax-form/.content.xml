@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:lastModified="{Date}2016-11-11T09:44:02.514Z"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/codealchemists/ui/templates/generic"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Ajax Form"
+        sling:resourceType="codealchemists/ui/pages/content/generic">
+        <par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="wcm/foundation/components/parsys">
+            <title
+                jcr:created="{Date}2016-11-11T09:32:11.221Z"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-11-11T09:43:47.957Z"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Code Alchemist Ajax Form Submit"
+                sling:resourceType="foundation/components/title"/>
+            <formbuilder
+                jcr:created="{Date}2016-11-11T06:53:30.985Z"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2016-11-11T06:53:30.985Z"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="codealchemists/forms/components/genericform/formbuilder">
+                <start
+                    jcr:lastModified="{Date}2016-11-11T09:44:02.478Z"
+                    jcr:lastModifiedBy="admin"
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="codealchemists/forms/components/genericform/start"
+                    actionType="codealchemists/forms/components/actions/baseFormSubmitAction"
+                    ajaxCall="true"
+                    ajaxSuccessMessage="thanks for ajax"
+                    clientValidation="true"
+                    formid="_content_codealchemists_americas_usa_en-us_sample-form_jcr_content_par_formbuilder_start"
+                    loadActionName="sampleFormLoader"
+                    submitActionName="sampleFormSubmitAction"/>
+                <fieldset
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="codealchemists/forms/components/genericform/fieldset">
+                    <fields
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="foundation/components/parsys">
+                        <textbox
+                            jcr:created="{Date}2016-11-11T06:54:03.973Z"
+                            jcr:createdBy="admin"
+                            jcr:lastModified="{Date}2016-11-11T06:54:28.110Z"
+                            jcr:lastModifiedBy="admin"
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceSuperType="foundation/components/form/abstractformfield"
+                            sling:resourceType="codealchemists/forms/components/genericform/textbox"
+                            label="Text"
+                            name="text"
+                            solr-facet-fields="undefined:undefined:undefined">
+                            <typeconfigs jcr:primaryType="nt:unstructured">
+                                <_x0031_
+                                    jcr:primaryType="nt:unstructured"
+                                    constraintMessage="required"
+                                    constraintType="codealchemists/forms/components/constraints/required"/>
+                            </typeconfigs>
+                        </textbox>
+                    </fields>
+                </fieldset>
+                <submit
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="codealchemists/forms/components/genericform/submit"
+                    submit="true"/>
+                <end
+                    jcr:primaryType="nt:unstructured"
+                    sling:resourceType="codealchemists/forms/components/genericform/end"/>
+            </formbuilder>
+        </par>
+    </jcr:content>
+</jcr:root>

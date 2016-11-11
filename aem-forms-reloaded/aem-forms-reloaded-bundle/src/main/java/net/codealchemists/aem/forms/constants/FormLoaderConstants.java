@@ -12,12 +12,7 @@ public final class FormLoaderConstants {
     public static final String LOAD_ACTION_NAME = "loadActionName";
 
     /**
-     * Name with which us shipping address loader get registered with form Loader service.
+     * Name with which sample shipping address loader get registered with form Loader service.
      */
-    public static final String US_SHIPPING_ADDRESS_FORM_LOADER = "usShippingAddressFormLoader";
-
-    /**
-     * Name with which us billing address loader get registered with form Loader service.
-     */
-    public static final String US_BILLING_ADDRESS_FORM_LOADER = "usBillingAddressFormLoader";
+    public static final String SAMPLE_FORM_LOADER = "sampleFormLoader";
 }

@@ -47,26 +47,6 @@ public final class ConstraintConstants {
     public static final String CONSTRAINT_FIELD_RESOURCE_PATH_ATTRIBUTE = "constraintFieldResourcePath";
 
     /**
-     * US Shipping address composite field constraint name.
-     */
-    public static final String US_SHIPPING_ADDRESS_CONSTRAINT_NAME = "cst-us-shipping-address";
-
-    /**
-     * US Billing address composite field constraint name.
-     */
-    public static final String US_BILLING_ADDRESS_CONSTRAINT_NAME = "cst-us-billing-address";
-
-    /**
-     * Request attribute for getting the validated shipping address
-     */
-    public static final String VALIDATED_SHIPPING_ADDRESS = "validatedShippingAddress";
-
-    /**
-     * Request attribute for getting the validated billing address
-     */
-    public static final String VALIDATED_BILLING_ADDRESS = "validatedBillingAddress";
-
-    /**
      * Pattern constraint name.
      */
     public static final String MIN_LENGTH_CONSTRAINT_NAME = "cst-minlength";
